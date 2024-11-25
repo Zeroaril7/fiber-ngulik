@@ -1,0 +1,13 @@
+version: '1.0'
+
+services:
+  db:
+    env_file: '.env'
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRESQL_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRES_DB: ${POSTGRESQL_DB_NAME}
+    ports:
+      - 5432:5432
